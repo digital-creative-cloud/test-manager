@@ -1,0 +1,14 @@
+{
+  "environment": [
+    {
+      "dev": {
+        "processBeginning": {
+          "connection-conect-sys": "",
+          "url-compra-plano-completo": "https://loja.conectcar.com/Home/Carrinho?tipoPlano=Completo",
+          "url-compra-plano-urbano": ""
+        },
+        "evidenceFolder": "C:\\Users\\lucas\\source\\repos\\fotos"
+      }
+    }
+  ]
+}
