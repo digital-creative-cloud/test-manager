@@ -3,15 +3,16 @@ using Newtonsoft.Json.Linq;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Text;
+using System.Threading;
 using Teste.Manager.Application.TestCaseInterfaces.Contract;
 using Teste.Manager.Domain;
 using Teste.Manager.Domain.Enums;
 
 namespace Teste.Manager.Application.TestCaseInterfaces.WebExecutors
 {
-    
+
 
     public class WebTestCaseExecutor : ITestCaseExecutor
     {
@@ -23,15 +24,15 @@ namespace Teste.Manager.Application.TestCaseInterfaces.WebExecutors
             _webDeviceInterfaceFactory = webDeviceInterfaceFactory;
             _webBasicsSteps = webBasicsSteps;
         }
-        public JObject Execute(TestCase test, string json)
+        public JObject Execute(TestCase test, string json, string env)
         {
             IWebDriver driver = _webDeviceInterfaceFactory.GetWebDriver(test.DeviceInterface);
 
+            driver.Navigate().GoToUrl(getConfigurationValue(env, "processBeginning",test.ProcessBeginning));
+
             driver.Manage().Window.Maximize();
 
-            driver.Navigate().GoToUrl(test.ProcessBeginning);
-
-            var collection = ExecuteSteps(driver, test.TestCasesToSteps.OrderBy(x => x.StepOrder).ToList(), json);
+            var collection = ExecuteSteps(driver, test.TestCasesToSteps.OrderBy(x => x.StepOrder).ToList(), json, env);
 
             var ret = new JObject();
 
@@ -45,17 +46,24 @@ namespace Teste.Manager.Application.TestCaseInterfaces.WebExecutors
             return ret;
         }
 
-        private List<KeyValuePair<string, string>> ExecuteSteps(IWebDriver driver, List<TestCasesToSteps> collection, string json)
+        private List<KeyValuePair<string, string>> ExecuteSteps(IWebDriver driver, List<TestCasesToSteps> collection, string json, string env)
         {
             var data = (JObject)JsonConvert.DeserializeObject(json);
 
             var ret = new List<KeyValuePair<string, string>>();
 
-            _webBasicsSteps.InitClass(driver);
+            var evidenceFolder = getConfigurationValue(env, "evidenceFolder");
+
+            _webBasicsSteps.InitClass(driver, evidenceFolder);
 
             foreach (var item in collection)
             {
-                string value = data[item.Step.Value].Value<string>();
+                string value = "";
+
+                if (!String.IsNullOrEmpty(item.Step.Value))
+                {
+                    value = data[item.Step.Value].Value<string>();
+                }
 
                 switch (item.Step.TypeId)
                 {
@@ -70,9 +78,36 @@ namespace Teste.Manager.Application.TestCaseInterfaces.WebExecutors
                         _webBasicsSteps.Click(item.Step.Path);
                         break;
                 }
+
+                Thread.Sleep(400);
             }
 
             return ret;
+        }
+
+
+        private string getConfigurationValue(string env, params string[] path)
+        {
+            var config = "";
+            var FilePath = Path.Combine(Directory.GetCurrentDirectory(), "Configuracao.json");
+
+            if (File.Exists(FilePath))
+            {
+                var configFile = (JObject)JsonConvert.DeserializeObject(File.ReadAllText(FilePath));
+
+                var a = configFile["environment"].Select(m => (JObject)m.SelectToken(env)).First();
+
+                JToken b = a;
+
+                foreach (var item in path)
+                {
+                    b = b.SelectToken(item);
+                }
+
+                config = b.Value<string>();
+            }
+
+            return config;
         }
     }
 }

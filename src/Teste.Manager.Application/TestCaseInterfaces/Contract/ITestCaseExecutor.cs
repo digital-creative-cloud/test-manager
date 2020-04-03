@@ -8,6 +8,6 @@ namespace Teste.Manager.Application.TestCaseInterfaces.Contract
 {
     public interface ITestCaseExecutor
     {
-        JObject Execute(TestCase test, string json);
+        JObject Execute(TestCase test, string json, string env);
     }
 }

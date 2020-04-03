@@ -21,23 +21,14 @@ namespace Teste.Manager.Application
 
         public WebBasicsSteps()
         {
-            
+
         }
 
-        public void InitClass(IWebDriver driver)
+        public void InitClass(IWebDriver driver, string evidenceFolder)
         {
             _driver = driver;
 
-            var path = Path.Combine(Directory.GetCurrentDirectory(), "Configuracao.json");
-
-            if (File.Exists(path))
-            {
-                var configFile = (JObject)JsonConvert.DeserializeObject(File.ReadAllText(path));
-
-                var a = configFile["environment"].Select(m => (JObject)m.SelectToken("dev")).First()["evidenceFolder"].Value<string>();
-
-                screenshotsPasta = a;
-            }
+            screenshotsPasta = evidenceFolder;
 
             if (!Directory.Exists(screenshotsPasta))
             {
@@ -66,7 +57,12 @@ namespace Teste.Manager.Application
 
         public bool SetText(string path, string value)
         {
-            _driver.FindElement(By.XPath(path)).SendKeys(value);
+            foreach (var item in value)
+            {
+                _driver.FindElement(By.XPath(path)).SendKeys(item.ToString());
+                Thread.Sleep(300);
+            }
+
             CapturaImagem();
 
             return true;

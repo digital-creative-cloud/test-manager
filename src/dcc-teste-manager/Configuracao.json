@@ -4,8 +4,12 @@
       "dev": {
         "processBeginning": {
           "connection-conect-sys": "",
-          "url-compra-plano-completo": "https://loja.conectcar.com/Home/Carrinho?tipoPlano=Completo",
-          "url-compra-plano-urbano": ""
+          "url-compra-plano-completo": "http://wdt012814cps.ciandt.global:1001/ConectCar.VendaTag.WebUi/home/Carrinho?tipoPlano=Completo",
+          "url-compra-plano-urbano": "",
+          "url-compra-plano-rodovia": "",
+          "url-compra-plano-basico": "",
+          "url-compra-plano-mundo-iu": "",
+          "url-compra-plano-personalite": ""
         },
         "evidenceFolder": "C:\\Users\\lucas\\source\\repos\\fotos"
       }

@@ -9,7 +9,7 @@ namespace Teste.Manager.Application.TestCaseInterfaces.MobileExecutors
 {
     public class MobileTestCaseExecutor : ITestCaseExecutor
     {
-        public JObject Execute(TestCase test, string json)
+        public JObject Execute(TestCase test, string json, string env)
         {
             throw new NotImplementedException();
         }

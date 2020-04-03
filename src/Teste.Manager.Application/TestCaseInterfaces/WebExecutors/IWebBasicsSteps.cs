@@ -9,6 +9,6 @@ namespace Teste.Manager.Application
         string GetText(string path);
         bool SetText(string path, string value);
 
-        void InitClass(IWebDriver driver);
+        void InitClass(IWebDriver driver, string evidenceFolder);
     }
 }

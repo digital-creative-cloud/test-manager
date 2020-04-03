@@ -18,7 +18,7 @@ namespace Teste.Manager.Application
             _deviceTypeExecutorFactory = deviceTypeExecutorFactory;
         }
 
-        public JObject Execute(string executionName, string json)
+        public JObject Execute(string executionName, string json, string env)
         {
             var feature = _executionSteps.GetFeatureByName(executionName);
 
@@ -26,35 +26,35 @@ namespace Teste.Manager.Application
 
             foreach (var item in feature.FeaturesToTestCases)
             {
-                saveReturn(json, item.TestCase, ret);
+                saveReturn(json, item.TestCase, ret, env);
             }
 
             return ret;
         }
 
-        public JObject ExecuteTestCase(string TestCaseName, string json)
+        public JObject ExecuteTestCase(string TestCaseName, string json, string env)
         {
             var item = _executionSteps.GetTestCaseByName(TestCaseName);
 
             var ret = new JObject();
 
-            saveReturn(json, item, ret);
+            saveReturn(json, item, ret, env);
 
             return ret;
         }
 
-        private void saveReturn(string json, TestCase item, JObject ret)
+        private void saveReturn(string json, TestCase item, JObject ret, string env)
         {
-            var testResult = proceedWithTestCase(item, json);
+            var testResult = proceedWithTestCase(item, json, env);
 
             ret.Add(item.Name, testResult);
         }
 
-        private JObject proceedWithTestCase(TestCase test, string json)
+        private JObject proceedWithTestCase(TestCase test, string json, string env)
         {
             var executor = _deviceTypeExecutorFactory.GetExecutor(test.DeviceType);
 
-            return executor.Execute(test, json);
+            return executor.Execute(test, json, env);
         }
     }
 }
