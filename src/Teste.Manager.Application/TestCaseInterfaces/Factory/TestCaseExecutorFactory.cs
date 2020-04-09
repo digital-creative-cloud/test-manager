@@ -22,6 +22,8 @@ namespace Teste.Manager.Application.TestCaseInterfaces.Factory
             {
                 case DeviceType.web:
                     return _itestCaseExecutor.FirstOrDefault(x => x.GetType().Name.Equals(nameof(WebTestCaseExecutor)));
+                case DeviceType.database:
+                    return _itestCaseExecutor.FirstOrDefault(x => x.GetType().Name.Equals(nameof(DbTestCaseExecutor)));
 
                 default:
                     return null;

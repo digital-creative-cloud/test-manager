@@ -39,7 +39,7 @@ namespace dcc_teste_manager.Controllers
             }
             else if (!String.IsNullOrEmpty(execution.testCase))
             {
-                ret = _engine.Execute(execution.feature, json, execution.environment);
+                ret = _engine.ExecuteTestCase(execution.testCase, json, execution.environment);
             }
 
             return Ok(ret.ToString());

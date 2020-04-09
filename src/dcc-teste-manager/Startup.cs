@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Teste.Manager.Application;
 using Teste.Manager.Application.TestCaseInterfaces.Contract;
+using Teste.Manager.Application.TestCaseInterfaces.DBExecutors;
 using Teste.Manager.Application.TestCaseInterfaces.Factory;
 using Teste.Manager.Application.TestCaseInterfaces.WebExecutors;
 using Teste.Manager.DataAccess;
@@ -36,7 +37,11 @@ namespace dcc_teste_manager
             services.AddSingleton<IWebDeviceInterfaceFactory, WebDeviceInterfaceFactory>();
             services.AddSingleton<IWebBasicsSteps, WebBasicsSteps>();
 
+            services.AddSingleton<IDbDeviceInterfaceFactory, DbDeviceInterfaceFactory>();
+            services.AddSingleton<IDbBasicsSteps, DbBasicsSteps>();
+
             services.AddSingleton<ITestCaseExecutor, WebTestCaseExecutor>();
+            services.AddSingleton<ITestCaseExecutor, DbTestCaseExecutor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
