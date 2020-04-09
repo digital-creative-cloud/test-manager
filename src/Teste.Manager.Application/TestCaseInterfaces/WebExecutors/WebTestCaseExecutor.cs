@@ -69,13 +69,19 @@ namespace Teste.Manager.Application.TestCaseInterfaces.WebExecutors
                 {
                     case StepType.setText:
                         _webBasicsSteps.SetText(item.Step.Path, value);
-                        break;
+                        break;                   
                     case StepType.getText:
                         value = _webBasicsSteps.GetText(item.Step.Path);
                         ret.Add(new KeyValuePair<string, string>(item.Step.Value, value));
                         break;
                     case StepType.click:
                         _webBasicsSteps.Click(item.Step.Path);
+                        break;
+                    case StepType.select:
+                        _webBasicsSteps.SetSelect(item.Step.Path, value);
+                        break;
+                    case StepType.setTextMask:
+                        _webBasicsSteps.SetTextMask(item.Step.Path, value);
                         break;
                 }
 

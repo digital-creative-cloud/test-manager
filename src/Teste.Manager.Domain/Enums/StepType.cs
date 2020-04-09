@@ -8,6 +8,8 @@ namespace Teste.Manager.Domain.Enums
     {
         setText = 1,
         getText,
-        click
+        click,
+        select,
+        setTextMask
     }
 }
