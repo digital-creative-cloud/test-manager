@@ -4,7 +4,7 @@
       "dev": {
         "processBeginning": {
           "connection-conect-sys": "",
-          "url-compra-plano-completo": "https://qa-loja.conectcar.com/home/Carrinho?tipoPlano=Completo",
+          "url-compra-plano-completo": "https://dev-loja.conectcar.com/Home/Carrinho?tipoPlano=Completo",
           "url-compra-plano-urbano": "",
           "url-compra-plano-rodovia": "",
           "url-compra-plano-basico": "",
@@ -12,7 +12,33 @@
           "url-compra-plano-personalite": "",
           "connection-string-sys": "Server=172.19.25.130;Initial Catalog=Conectcar;User Id=sa;Password=HpcX#T3dv8Gu;Persist Security Info=False"
         },
-        "evidenceFolder": "C:\\Users\\lucas\\source\\repos\\fotos"
+        "evidenceFolder": "C:\\users\\public\\"
+      },
+      "qa": {
+        "processBeginning": {
+          "connection-conect-sys": "",
+          "url-compra-plano-completo": "https://qa-loja.conectcar.com/Home/Carrinho?tipoPlano=Completo",
+          "url-compra-plano-urbano": "",
+          "url-compra-plano-rodovia": "",
+          "url-compra-plano-basico": "",
+          "url-compra-plano-mundo-iu": "",
+          "url-compra-plano-personalite": "",
+          "url-ativacao-plano-completo": "https://qa-cliente.conectcar.com/ativacaotag"
+        },
+        "evidenceFolder": "C:\\users\\public\\"
+      },
+      "homol": {
+        "processBeginning": {
+          "connection-conect-sys": "",
+          "url-compra-plano-completo": "https://homol-loja.conectcar.com/Home/Carrinho?tipoPlano=Completo",
+          "url-compra-plano-urbano": "",
+          "url-compra-plano-rodovia": "",
+          "url-compra-plano-basico": "",
+          "url-compra-plano-mundo-iu": "",
+          "url-compra-plano-personalite": "",
+          "url-ativacao-plano-completo": "https://homol-cliente.conectcar.com/ativacaotag"
+        },
+        "evidenceFolder": "C:\\users\\public\\"
       }
     }
   ]

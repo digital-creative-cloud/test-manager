@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Chrome;
 using System;
 using System.Collections.Generic;
@@ -38,6 +39,14 @@ namespace Teste.Manager.Application
 
         public bool Click(string path)
         {
+            IWebElement element = _driver.FindElement(By.XPath(path));
+            //do
+            //{
+            //    thread.sleep(300);
+            //} while (!element.enabled && !element.displayed);
+            IWait<IWebDriver> wait = new OpenQA.Selenium.Support.UI.WebDriverWait(_driver, TimeSpan.FromSeconds(100));
+            wait.Until(driver1 => driver1.FindElement(By.XPath(path)).Enabled && driver1.FindElement(By.XPath(path)).Displayed);
+
             _driver.FindElement(By.XPath(path)).Click();
             CapturaImagem();
             return true;
@@ -55,13 +64,23 @@ namespace Teste.Manager.Application
             Screenshot(screenshotsPasta + "Imagem_" + contador++ + ".png");
         }
 
-        public bool SetText(string path, string value)
+        public bool SetTextMask(string path, string value)
         {
             foreach (var item in value)
             {
                 _driver.FindElement(By.XPath(path)).SendKeys(item.ToString());
-                Thread.Sleep(300);
+                Thread.Sleep(100);
             }
+
+            CapturaImagem();
+
+            return true;
+        }
+
+        public bool SetText(string path, string value)
+        {
+            _driver.FindElement(By.XPath(path)).SendKeys(value);
+            Thread.Sleep(300);
 
             CapturaImagem();
 
@@ -77,6 +96,17 @@ namespace Teste.Manager.Application
             CapturaImagem();
 
             return value;
+        }
+
+        public bool SetSelect(string path, string value)
+        {
+            SelectElement select = new SelectElement(_driver.FindElement(By.XPath(path)));
+
+            select.SelectByText(value);
+
+            CapturaImagem();
+
+            return true;
         }
     }
 }

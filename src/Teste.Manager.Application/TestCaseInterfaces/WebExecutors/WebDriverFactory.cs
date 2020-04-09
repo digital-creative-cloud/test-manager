@@ -26,6 +26,8 @@ namespace Teste.Manager.Application
                     throw new NotImplementedException("Device Type not avalible for WebDeviceInterfaceFactory");
 
             }
+            webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(100);
+
             return webDriver;
         }
     }

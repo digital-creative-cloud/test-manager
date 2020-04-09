@@ -9,6 +9,8 @@ namespace Teste.Manager.Domain.Enums
         setText = 1,
         getText,
         click,
+        select,
+        setTextMask,
         execute,
         setparameter,
         setCommand
