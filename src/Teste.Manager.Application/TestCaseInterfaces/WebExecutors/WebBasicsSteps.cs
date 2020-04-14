@@ -108,5 +108,11 @@ namespace Teste.Manager.Application
 
             return true;
         }
+        public bool PressKey(string key)
+        {
+            _driver.FindElement(By.XPath("/ html / body")).SendKeys(key) ;
+            return true;
+        }
+
     }
 }

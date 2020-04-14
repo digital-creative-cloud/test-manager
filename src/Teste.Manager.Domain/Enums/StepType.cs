@@ -13,6 +13,7 @@ namespace Teste.Manager.Domain.Enums
         setTextMask,
         execute,
         setparameter,
-        setCommand
+        setCommand,
+        PressKey
     }
 }

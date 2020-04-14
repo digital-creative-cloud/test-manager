@@ -83,6 +83,9 @@ namespace Teste.Manager.Application.TestCaseInterfaces.WebExecutors
                     case StepType.setTextMask:
                         _webBasicsSteps.SetTextMask(item.Step.Path, value);
                         break;
+                    case StepType.PressKey:
+                        _webBasicsSteps.PressKey(value);
+                        break;
                 }
 
                 Thread.Sleep(400);
