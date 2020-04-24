@@ -39,7 +39,7 @@ namespace Teste.Manager.Application
 
         public bool Click(string path)
         {
-            IWebElement element = _driver.FindElement(By.XPath(path));
+            //IWebElement element = _driver.FindElement(By.XPath(path));
             //do
             //{
             //    thread.sleep(300);

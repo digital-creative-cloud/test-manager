@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Teste.Manager.Domain", "Tes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Teste.Manager.Application", "Teste.Manager.Application\Teste.Manager.Application.csproj", "{FC9ABBC2-749D-4937-AD97-0980E6990163}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teste.Manager.DataAccess", "Teste.Manager.DataAccess\Teste.Manager.DataAccess.csproj", "{F8ACFC3A-E431-4A02-AE93-EE03E968A06A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Teste.Manager.DataAccess", "Teste.Manager.DataAccess\Teste.Manager.DataAccess.csproj", "{F8ACFC3A-E431-4A02-AE93-EE03E968A06A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "teste-manager-Interface", "teste-manager-Interface\teste-manager-Interface.csproj", "{D425326E-79C0-4C00-8873-4F0C646A0FE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{F8ACFC3A-E431-4A02-AE93-EE03E968A06A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8ACFC3A-E431-4A02-AE93-EE03E968A06A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8ACFC3A-E431-4A02-AE93-EE03E968A06A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D425326E-79C0-4C00-8873-4F0C646A0FE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D425326E-79C0-4C00-8873-4F0C646A0FE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D425326E-79C0-4C00-8873-4F0C646A0FE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D425326E-79C0-4C00-8873-4F0C646A0FE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

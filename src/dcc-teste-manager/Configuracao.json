@@ -5,11 +5,13 @@
         "processBeginning": {
           "connection-conect-sys": "",
           "url-compra-plano-completo": "https://dev-loja.conectcar.com/Home/Carrinho?tipoPlano=Completo",
-          "url-compra-plano-urbano": "",
-          "url-compra-plano-rodovia": "",
-          "url-compra-plano-basico": "",
-          "url-compra-plano-mundo-iu": "",
-          "url-compra-plano-personalite": "",
+          "url-compra-plano-urbano": "https://dev-loja.conectcar.com/Home/Carrinho?tipoPlano=Urbano",
+          "url-compra-plano-rodovia": "https://dev-loja.conectcar.com/Home/Carrinho?tipoPlano=Rodovia",
+          "url-compra-plano-basico": "https://dev-loja.conectcar.com/Home/Carrinho?tipoPlano=Basico",
+          "url-compra-plano-mundo-iu": "https://dev-loja.conectcar.com/Home/Carrinho?tipoPlano=completo&codigoCampanha=mundo-iu&_ga=2.82213343.895874050.1584532642-1021564856.1584532642",
+          "url-compra-plano-personalite": "https://dev-loja.conectcar.com/Home/Carrinho?tipoPlano=completo&codigoCampanha=personnalite-black-infinite&_ga=2.254221761.895874050.1584532642-1021564856.1584532642",
+          "url-compra-plano-private": "https://dev-loja.conectcar.com/Home/Carrinho?tipoPlano=completo&codigoCampanha=private-black-infinite&_ga=2.254221761.895874050.1584532642-1021564856.1584532642",
+          "url-ativacao-plano-completo": "https://dev-cliente.conectcar.com/ativacaotag",
           "connection-string-sys": "Server=172.19.25.130;Initial Catalog=Conectcar;User Id=sa;Password=HpcX#T3dv8Gu;Persist Security Info=False"
         },
         "evidenceFolder": "C:\\users\\public\\"
@@ -18,11 +20,12 @@
         "processBeginning": {
           "connection-conect-sys": "",
           "url-compra-plano-completo": "https://qa-loja.conectcar.com/Home/Carrinho?tipoPlano=Completo",
-          "url-compra-plano-urbano": "",
-          "url-compra-plano-rodovia": "",
-          "url-compra-plano-basico": "",
-          "url-compra-plano-mundo-iu": "",
-          "url-compra-plano-personalite": "",
+          "url-compra-plano-urbano": "https://qa-loja.conectcar.com/Home/Carrinho?tipoPlano=Urbano",
+          "url-compra-plano-rodovia": "https://qa-loja.conectcar.com/Home/Carrinho?tipoPlano=Rodovia",
+          "url-compra-plano-basico": "https://qa-loja.conectcar.com/Home/Carrinho?tipoPlano=Basico",
+          "url-compra-plano-mundo-iu": "https://qa-loja.conectcar.com/Home/Carrinho?tipoPlano=completo&codigoCampanha=mundo-iu&_ga=2.82213343.895874050.1584532642-1021564856.1584532642",
+          "url-compra-plano-personalite": "https://qa-loja.conectcar.com/Home/Carrinho?tipoPlano=completo&codigoCampanha=personnalite-black-infinite&_ga=2.254221761.895874050.1584532642-1021564856.1584532642",
+          "url-compra-plano-private": "https://qa-loja.conectcar.com/Home/Carrinho?tipoPlano=completo&codigoCampanha=private-black-infinite&_ga=2.254221761.895874050.1584532642-1021564856.1584532642",
           "url-ativacao-plano-completo": "https://qa-cliente.conectcar.com/ativacaotag"
         },
         "evidenceFolder": "C:\\users\\public\\"
@@ -31,11 +34,12 @@
         "processBeginning": {
           "connection-conect-sys": "",
           "url-compra-plano-completo": "https://homol-loja.conectcar.com/Home/Carrinho?tipoPlano=Completo",
-          "url-compra-plano-urbano": "",
-          "url-compra-plano-rodovia": "",
-          "url-compra-plano-basico": "",
-          "url-compra-plano-mundo-iu": "",
-          "url-compra-plano-personalite": "",
+          "url-compra-plano-urbano": "https://homol-loja.conectcar.com/Home/Carrinho?tipoPlano=Urbano",
+          "url-compra-plano-rodovia": "https://homol-loja.conectcar.com/Home/Carrinho?tipoPlano=Rodovia",
+          "url-compra-plano-basico": "https://homol-loja.conectcar.com/Home/Carrinho?tipoPlano=Basico",
+          "url-compra-plano-mundo-iu": "https://homol-loja.conectcar.com/Home/Carrinho?tipoPlano=completo&codigoCampanha=mundo-iu&_ga=2.82213343.895874050.1584532642-1021564856.1584532642",
+          "url-compra-plano-personalite": "https://homol-loja.conectcar.com/Home/Carrinho?tipoPlano=completo&codigoCampanha=personnalite-black-infinite&_ga=2.254221761.895874050.1584532642-1021564856.1584532642",
+          "url-compra-plano-private": "https://homol-loja.conectcar.com/Home/Carrinho?tipoPlano=completo&codigoCampanha=private-black-infinite&_ga=2.254221761.895874050.1584532642-1021564856.1584532642",
           "url-ativacao-plano-completo": "https://homol-cliente.conectcar.com/ativacaotag"
         },
         "evidenceFolder": "C:\\users\\public\\"
